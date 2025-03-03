@@ -5,7 +5,7 @@ from Clever_MySQL_conn import cleverCursor, mysqlConn
 
 categoriaRouter = APIRouter() #Se crea un objeto de tipo APIRouter
 
-cleverCursor.execute("CREATE TABLE IF NOT EXISTS Categoria (id_Categoria INT AUTO_INCREMENT PRIMARY KEY, Tipo_Categoria VARCHAR(255)), FOREIGN KEY (Cursos_id) REFERENCES Cursos(id_Cursos)")
+cleverCursor.execute("CREATE TABLE IF NOT EXISTS Categoria (id_Categoria INT AUTO_INCREMENT PRIMARY KEY, Tipo_Categoria VARCHAR(255)), FOREIGN KEY (Cursos_id) REFERENCES Cursos(id_Cursos), FOREING KEY (foro_id) REFERENCES foro(id_foro)")
 
 class categoriaDB(BaseModel):
     Tipo_Categoria: str #Nombre_Categoria
