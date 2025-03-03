@@ -6,7 +6,7 @@ foroRouter =  APIRouter()
 
 cleverCursor.execute("""
 CREATE TABLE IF NOT EXISTS Foro (
-    id_foro INT AUTO_INCREMENT PRIMARY KEY,
+    id_Foro INT AUTO_INCREMENT PRIMARY KEY,
     Nombre_Foro VARCHAR(255),
     Descripcion_Foro VARCHAR(255),
     Respuesta_Foro INT

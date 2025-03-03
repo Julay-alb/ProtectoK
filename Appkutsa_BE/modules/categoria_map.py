@@ -10,9 +10,9 @@ CREATE TABLE IF NOT EXISTS Categoria (
     id_Categoria INT AUTO_INCREMENT PRIMARY KEY,
     Tipo_Categoria VARCHAR(255),
     Cursos_id INT NOT NULL,
-    foro_id INT NOT NULL,
-    FOREIGN KEY (Cursos_id) REFERENCES Cursos(id_Cursos) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (foro_id) REFERENCES foro(id_foro) ON DELETE CASCADE ON UPDATE CASCADE
+    Foro_id INT NOT NULL,
+    FOREIGN KEY (Cursos_id) REFERENCES Cursos(id_Cursos),
+    FOREIGN KEY (Foro_id) REFERENCES Foro(id_Foro)
 )
 """)
 
