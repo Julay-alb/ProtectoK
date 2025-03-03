@@ -5,7 +5,14 @@ from Clever_MySQL_conn import cleverCursor, mysqlConn
 
 cursosRouter = APIRouter() #Se crea un objeto de tipo APIRouter
 
-cleverCursor.execute("CREATE TABLE IF NOT EXISTS Cursos (id_Cursos INT AUTO_INCREMENT PRIMARY KEY, Nombre_Curso VARCHAR(255), Descripcion_Curso VARCHAR(255), Contenido_Curso VARCHAR(255))")
+cleverCursor.execute("""
+CREATE TABLE IF NOT EXISTS Cursos (
+    id_Cursos INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre_Curso VARCHAR(255),
+    Descripcion_Curso VARCHAR(255),
+    Contenido_Curso VARCHAR(255)
+)
+""")
 
 
 class cursosDB(BaseModel):
