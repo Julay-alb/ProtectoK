@@ -4,7 +4,7 @@ from Clever_MySQL_conn import cleverCursor, mysqlConn
 
 foroRouter =  APIRouter()
 
-cleverCursor.execute("CREATE TABLE IF NOT EXISTS foro (id_foro INT AUTO_INCREMENT PRIMARY KEY, Nombre_Foro VARCHAR(255), Descripcion_Foro VARCHAR(255), Respuesta_Foro INT)")
+cleverCursor.execute("CREATE TABLE IF NOT EXISTS Foro (id_foro INT AUTO_INCREMENT PRIMARY KEY, Nombre_Foro VARCHAR(255), Descripcion_Foro VARCHAR(255), Respuesta_Foro INT)")
 
 class ForoDB(BaseModel):
     Nombre_Foro: str
