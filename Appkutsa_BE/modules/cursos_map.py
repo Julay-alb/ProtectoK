@@ -3,16 +3,9 @@ from pydantic import BaseModel
 from Clever_MySQL_conn import cleverCursor, mysqlConn
 import mysql.connector
 from sqlmodel import SQLModel, Relationship, Field
-from categoria_map import Categoria
+
 
 cursosRouter = APIRouter() #Se crea un objeto de tipo APIRouter
-class Cursos(SQLModel, table=True):
-    id_Curso: int = Field(default=None, primary_key=True)
-    Nombre_Curso: str
-    Descripcion_Curso: str
-    Contenido_Curso: str
-    categorias: list["Categoria"] = Relationship(back_populates="cursos")
-
 
 class cursosDB(BaseModel):
     Nombre_Curso: str

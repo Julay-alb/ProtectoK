@@ -3,16 +3,9 @@ from pydantic import BaseModel
 from Clever_MySQL_conn import cleverCursor, mysqlConn
 import mysql.connector
 from sqlmodel import SQLModel, Field, Relationship
-from categoria_map import Categoria
+
 
 foroRouter =  APIRouter()
-
-class Foro(SQLModel, table=True):
-    id_Foro: int = Field(default=None, primary_key=True)
-    Nombre_Foro: str
-    Descripcion_Foro: str
-    Respuesta_Foro: int
-    categorias: list["Categoria"] = Relationship(back_populates="owner")
 
 class ForoDB(BaseModel):
     Nombre_Foro: str
