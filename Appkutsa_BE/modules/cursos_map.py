@@ -1,18 +1,17 @@
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel
-import mysql
 from Clever_MySQL_conn import cleverCursor, mysqlConn
+import mysql.connector
+from sqlmodel import SQLModel, Relationship, Field
+from categoria_map import Categoria
 
 cursosRouter = APIRouter() #Se crea un objeto de tipo APIRouter
-
-cleverCursor.execute("""
-CREATE TABLE IF NOT EXISTS Cursos (
-    id_Cursos INT AUTO_INCREMENT PRIMARY KEY,
-    Nombre_Curso VARCHAR(255),
-    Descripcion_Curso VARCHAR(255),
-    Contenido_Curso VARCHAR(255)
-)
-""")
+class Cursos(SQLModel, table=True):
+    id_Curso: int = Field(default=None, primary_key=True)
+    Nombre_Curso: str
+    Descripcion_Curso: str
+    Contenido_Curso: str
+    categorias: list["Categoria"] = Relationship(back_populates="cursos")
 
 
 class cursosDB(BaseModel):

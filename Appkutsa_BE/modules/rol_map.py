@@ -1,5 +1,4 @@
 from fastapi import APIRouter, HTTPException, status
-import mysql
 from pydantic import BaseModel
 from Clever_MySQL_conn import cleverCursor, mysqlConn
 
