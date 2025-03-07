@@ -43,4 +43,4 @@ def insert_user(foroPost: foroDB):
     except mysqlConn.connector.Error as err:
         raise HTTPException(status_code=400, detail=f"Error: {err}")
 
-    return {"message": "User inserted successfully"}
+    return {"message": "foro inserted successfully"}
