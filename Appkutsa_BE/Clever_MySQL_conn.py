@@ -1,6 +1,7 @@
 import mysql
 import mysql.connector
 
+
 #Connect to the database
 mysqlConn = mysql.connector.Connect(
     host = 'localhost', #'bmn0p7ohukcq6xxuqudp-mysql.services.clever-cloud.com',
